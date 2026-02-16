@@ -1,0 +1,24 @@
+{
+  "name": "bour-bot",
+  "version": "1.0.0",
+  "description": "A discord bot that re-sends links to X (Twitter) and other social media sites with fx-extensions that allow for cleaner media embeds",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caleb-hoang/bour-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/caleb-hoang/bour-bot/issues"
+  },
+  "homepage": "https://github.com/caleb-hoang/bour-bot#readme",
+  "dependencies": {
+    "discord.js": "^14.25.1"
+  }
+}
