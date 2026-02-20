@@ -5,7 +5,7 @@ const { token } = require('./config.json');
 const { MongoClient} = require('mongodb');
 const { databaseConnect } = require('./config.json');
 
-// Connect to MongoDB database
+// Connect to MongoDB database to update metrics
 const mongoClient = new MongoClient(databaseConnect);
 const db = mongoClient.db('bour-bot');
 
@@ -49,9 +49,6 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
 	try {
 		await command.execute(interaction);
-		await db.command-metrics.updateOne({command: interaction.commandName}, {$inc:{numUses: 1}});
-		await db.user-list.updateOne({user: interaction.user.id}, {upsert: true});
-
 	} catch (error) {
 		console.error(error);
 		if (interaction.replied || interaction.deferred) {
@@ -66,6 +63,12 @@ client.on(Events.InteractionCreate, async (interaction) => {
 			});
 		}
 	}
+	
+	let collection = db.collection('command-metrics')
+	await collection.updateOne({command: interaction.commandName}, {$inc:{numUses: 1}}, {upsert: true});
+	collection = db.collection('user-list');
+	await collection.updateOne({user: interaction.user.id}, {upsert: true});
+
 	console.log(interaction);
 });
 
@@ -73,3 +76,15 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
 // Log in to Discord with your client's token
 client.login(token);
+
+process.on('SIGTERM', () => {
+	mongoClient.close();
+	console.log("DB connection closed.")
+	process.exit(0);
+})
+
+process.on('SIGINT', () => {
+	mongoClient.close();
+	console.log("DB connection closed.")
+	process.exit(0);
+})
