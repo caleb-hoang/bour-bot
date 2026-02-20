@@ -2,7 +2,14 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits, MessageFlags } = require('discord.js');
 const { token } = require('./config.json');
+const { MongoClient} = require('mongodb');
+const { databaseConnect } = require('./config.json');
 
+// Connect to MongoDB database
+const mongoClient = new MongoClient(databaseConnect);
+const db = client.db('bour-bot');
+
+// Log into Discord
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 client.once(Events.ClientReady, (readyClient) => {
@@ -14,6 +21,7 @@ client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
 
+// Load all available commands.
 for (const folder of commandFolders) {
 	const commandsPath = path.join(foldersPath, folder);
 	const commandFiles = fs.readdirSync(commandsPath).filter((file) => file.endsWith('.js'));
@@ -29,6 +37,7 @@ for (const folder of commandFolders) {
 	}
 }
 
+// Handle commands
 client.on(Events.InteractionCreate, async (interaction) => {
 	if (!interaction.isChatInputCommand()) return;
 		const command = interaction.client.commands.get(interaction.commandName);
@@ -40,6 +49,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
 	try {
 		await command.execute(interaction);
+		await db.command-metrics.updateOne({command: interaction.commandName}, {$inc:{numUses: 1}});
+		await db.user-list.updateOne({user: interaction.user.id}, {upsert: true});
+
 	} catch (error) {
 		console.error(error);
 		if (interaction.replied || interaction.deferred) {
@@ -56,6 +68,8 @@ client.on(Events.InteractionCreate, async (interaction) => {
 	}
 	console.log(interaction);
 });
+
+
 
 // Log in to Discord with your client's token
 client.login(token);
