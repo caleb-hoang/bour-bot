@@ -7,7 +7,7 @@ const { databaseConnect } = require('./config.json');
 
 // Connect to MongoDB database
 const mongoClient = new MongoClient(databaseConnect);
-const db = client.db('bour-bot');
+const db = mongoClient.db('bour-bot');
 
 // Log into Discord
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
