@@ -1,5 +1,7 @@
 # bour-bot
-A discord utility bot that re-sends links to X (Twitter) and other social media sites with fx-extensions that allow for cleaner media embeds.
+A Discord utility bot that re-sends links to X (Twitter) and other social media sites with fx-extensions that allow for cleaner media embeds.
+
+Invite me to your server or DMs [here](https://discord.com/oauth2/authorize?client_id=1473050765919522969)!
 
 ## Commands
 
