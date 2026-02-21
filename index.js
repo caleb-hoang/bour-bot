@@ -7,7 +7,7 @@ const { databaseConnect } = require('./config.json');
 
 // Connect to MongoDB database to update metrics
 const mongoClient = new MongoClient(databaseConnect);
-await mongoClient.connect();
+mongoClient.connect();
 const db = mongoClient.db('bour-bot');
 
 // Log into Discord
