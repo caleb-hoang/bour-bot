@@ -7,7 +7,6 @@ const { databaseConnect } = require('./config.json');
 
 // Connect to MongoDB database to update metrics
 const mongoClient = new MongoClient(databaseConnect);
-mongoClient.connect();
 const db = mongoClient.db('bour-bot');
 
 // Log into Discord
@@ -68,7 +67,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
 	let collection = db.collection('command-metrics')
 	await collection.updateOne({command: interaction.commandName}, {$inc:{numUses: 1}}, {upsert: true});
 	collection = db.collection('user-list');
-	await collection.updateOne({user: interaction.user.id}, {upsert: true});
+	await collection.updateOne({user: interaction.user.id}, {$set:{name: interaction.user.name}}, {upsert: true});
 	console.log(interaction);
 });
 
