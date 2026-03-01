@@ -64,10 +64,16 @@ client.on(Events.InteractionCreate, async (interaction) => {
 		}
 	}
 	
-	let collection = db.collection('command-metrics')
-	await collection.updateOne({command: interaction.commandName}, {$inc:{numUses: 1}}, {upsert: true});
-	collection = db.collection('user-list');
-	await collection.updateOne({user: interaction.user.id}, {$set:{name: interaction.user.username}}, {upsert: true});
+	try {
+		let collection = db.collection('command-metrics')
+		await collection.updateOne({command: interaction.commandName}, {$inc:{numUses: 1}}, {upsert: true});
+		collection = db.collection('user-list');
+		await collection.updateOne({user: interaction.user.id}, {$set:{name: interaction.user.username}}, {upsert: true});
+	} catch (error) {
+		console.log("Database logging error!")
+	}
+
+
 	console.log(interaction);
 });
 
