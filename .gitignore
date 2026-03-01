@@ -1,5 +1,5 @@
 config.json
-deploy-commands.js
+deploy-commands-server.js
 deploy-commands-global.js
 clear-server.js
 node_modules
