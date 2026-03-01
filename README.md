@@ -7,12 +7,16 @@ Invite me to your server or DMs [here](https://discord.com/oauth2/authorize?clie
 
 ### Twitter
 - Takes a Twitter/X link as input and posts it as an embed link via [FXTwitter](https://github.com/FxEmbed/FxEmbed)
+- Additional option to mark post as a spoiler
 
 ### Reddit
 - Takes a Reddit link as input and posts it as an embed link via [Rxddit](https://github.com/MinnDevelopment/fxreddit)
+- Additional option to mark post as a spoiler
 
 ### Instagram
 - Takes an Instagram link as input and posts it as an embed link via [InstagramEmbed](https://github.com/Lainmode/InstagramEmbed-vxinstagram)
+- Additional option to mark post as a spoiler
 
 ### Bsky
 - Takes a Bluesky link and posts it as an embed link via [VixBluesky](https://github.com/Lexedia/VixBluesky/wiki/Features)
+- Additional option to mark post as a spoiler
