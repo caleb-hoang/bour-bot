@@ -1,6 +1,8 @@
 config.json
+config-test.json
 deploy-commands-server.js
 deploy-commands-global.js
 clear-server.js
 node_modules
 ping.js
+index-test.js
