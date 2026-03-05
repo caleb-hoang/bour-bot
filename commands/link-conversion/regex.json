@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Twitter",
+    "regex": "^(https?:\\/\\/)?(www\\.)?(twitter\\.com|x\\.com)\\/[a-zA-Z0-9_]+\\/?([a-zA-Z0-9_]+)?\\S*$",
+    "target": ["twitter.com", "x.com"],
+    "replacement": ["fxtwitter.com", "fxtwitter.com"]
+  },
+  {
+    "name": "BlueSky",
+    "regex": "^(https?:\\/\\/)?(www\\.)?bsky\\.app\\/[a-zA-Z0-9_]+\\/?([a-zA-Z0-9_]+)?\\S*$",
+    "target": ["bsky.app"],
+    "replacement": ["bskx.app"]
+  },
+  {
+    "name": "Instagram",
+    "regex": "^(https?:\\/\\/)?(www\\.)?instagram\\.com\\/[a-zA-Z0-9_]+\\/?([a-zA-Z0-9_]+)?\\S*$",
+    "target": ["instagram.com"],
+    "replacement": ["vxinstagram.com"]
+  },
+  {
+    "name": "Reddit",
+    "regex": "^(https?:\\/\\/)?(www\\.)?reddit\\.com\\/[a-zA-Z0-9_]+\\/?([a-zA-Z0-9_]+)?\\S*$",
+    "target": ["reddit.com"],
+    "replacement": ["rxddit.com"]
+  }
+]
