@@ -11,5 +11,5 @@ Invite me to your server or DMs [here](https://discord.com/oauth2/authorize?clie
 - Takes an Instagram link as input and posts it as an embed link via [InstagramEmbed](https://github.com/Lainmode/InstagramEmbed-vxinstagram)
 - Takes a Bluesky link and posts it as an embed link via [VixBluesky](https://github.com/Lexedia/VixBluesky/wiki/Features)
 
-### Spoiler
+### Spoil-Embed
 - Identical function as /embed but marks the message as a spoiler.
