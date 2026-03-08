@@ -31,7 +31,7 @@ module.exports = {
       await interaction.reply("||" + convertedLink + "||");
     } else {
       await interaction.reply({
-        content: 'Link invalid! I currently only support Twitter/X, Bluesky, Instagram, and Reddit links.',
+        content: 'Link invalid! I currently only support Twitter/X, Bluesky, Instagram, YouTube Shorts, and Reddit links.',
       });
     }
   },

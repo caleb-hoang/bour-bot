@@ -1,12 +1,18 @@
 [
   {
+    "name": "YouTube Shorts",
+    "regex": "^(https?:\\/\\/)?(www\\.)?youtube\\.com\\/shorts\\/[a-zA-Z0-9_]+\\S*$",
+    "target": ["shorts.youtube.com", "/shorts/"],
+    "replacement": ["youtube.com", "/watch?v="]
+  },
+  {
     "name": "Twitter",
     "regex": "^(https?:\\/\\/)?(www\\.)?(twitter\\.com|x\\.com)\\/[a-zA-Z0-9_]+\\/?([a-zA-Z0-9_]+)?\\S*$",
     "target": ["twitter.com", "x.com"],
     "replacement": ["fxtwitter.com", "fxtwitter.com"]
   },
   {
-    "name": "BlueSky",
+    "name": "Bluesky",
     "regex": "^(https?:\\/\\/)?(www\\.)?bsky\\.app\\/[a-zA-Z0-9_]+\\/?([a-zA-Z0-9_]+)?\\S*$",
     "target": ["bsky.app"],
     "replacement": ["bskx.app"]

@@ -10,6 +10,6 @@ Invite me to your server or DMs [here](https://discord.com/oauth2/authorize?clie
 - Takes a Reddit link as input and posts it as an embed link via [Rxddit](https://github.com/MinnDevelopment/fxreddit)
 - Takes an Instagram link as input and posts it as an embed link via [InstagramEmbed](https://github.com/Lainmode/InstagramEmbed-vxinstagram)
 - Takes a Bluesky link and posts it as an embed link via [VixBluesky](https://github.com/Lexedia/VixBluesky/wiki/Features)
-
+- Takes a YouTube Shorts link and posts it as a standard YouTube video link (to prevent opening the Shorts layout upon opening the link)
 ### Spoil-Embed
 - Identical function as /embed but marks the message as a spoiler.
